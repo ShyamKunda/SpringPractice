@@ -9,10 +9,26 @@
 
 
 
-	<bean id="compactDisc"
+	<bean id="compactDisc" primary="true"
 		class="soundsystemXMLConfiguration.SgtPeppers"></bean>
 	<bean id="cdPlayer" class="soundsystemXMLConfiguration.CDPlayer">
 		<constructor-arg ref="compactDisc" />
+	</bean>
+
+	<bean id="emptyDisc" class="soundsystemXMLConfiguration.BlankDisc">
+		<constructor-arg value="Shyam" />
+		<constructor-arg value="The Man with Metal heart" />
+		<constructor-arg>
+		<list>
+			<value>track1</value>
+			<value>track2</value>
+			<value>track3</value>
+			<value>track4</value>
+			<value>track5</value>
+			<value>track6</value>
+		</list>
+		
+		</constructor-arg>
 	</bean>
 
 

@@ -1,4 +1,4 @@
-package soundsystemXMLConfiguration;
+package soundsystemcnamespace;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -9,38 +9,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration ({"/soundSystem.xml"})
+@ContextConfiguration("/soundSystemXMLCSpace.xml")
 public class CDPlayerTest {
-	
 	
 	@Autowired
 	private CompactDisc cd;
 	
-	@Autowired
-	private MediaPlayer player;
 	
 	@Autowired
-	private BlankDisc blankDisk;
+	private CDPlayer player;
+	
+	@Autowired
+	private BlankDisc bdisc;
 	
 	@Test
-	public void cdShouldNotBeNull() {
+	public void cdTest() {
 		assertNotNull(cd);
+		assertEquals(cd.play(), "Playing Lonely hearts club of sgtPeppers");
 	}
 	
 	@Test
-	public void play()
-	{
-		String msg = player.play();
-		assertEquals(msg,"Playing Lonely hearts club of sgtPeppers");
-		System.out.println(blankDisk.play());
-		assertEquals(blankDisk.play(),"Playing Shyam by The Man with Metal heart" );
+	public void cdPlayer() {
+		assertNotNull(player);
+		System.out.println(bdisc.play());
+		assertEquals(player.play(), "Playing Lonely hearts club of sgtPeppers");
+		
+		
 	}
-	
-	@Test
-	public void testTrackSize() {
-		assertEquals(blankDisk.getTracksSize(),6);
-	}
-	
+
 }

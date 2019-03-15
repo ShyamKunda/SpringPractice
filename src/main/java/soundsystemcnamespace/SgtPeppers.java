@@ -1,8 +1,6 @@
 package soundsystemcnamespace;
 
-import org.springframework.stereotype.Component;
 
-@Component
 public class SgtPeppers implements CompactDisc{
 
 	public String play() {

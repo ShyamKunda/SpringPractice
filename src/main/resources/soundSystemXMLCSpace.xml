@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:c="http://www.springframework.org/schema/c"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  
+  
+  <bean id="compactDisc" primary="true" class="soundsystemcnamespace.SgtPeppers"></bean>
+  
+  <bean id="cdPlayer" class="soundsystemcnamespace.CDPlayer" c:cd-ref="compactDisc" >
+  </bean> 
+  
+  <bean id="emptyDisc" class = "soundsystemcnamespace.BlankDisc" 
+  	c:_0="Shyam"
+  	c:_1 ="The Man with Metal heart"/> 
+  
+  
+</beans>
