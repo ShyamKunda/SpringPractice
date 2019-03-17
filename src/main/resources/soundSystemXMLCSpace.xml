@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:c="http://www.springframework.org/schema/c"
+  xmlns:p="http://www.springframework.org/schema/p"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.springframework.org/schema/beans
   http://www.springframework.org/schema/beans/spring-beans.xsd">
@@ -12,9 +13,27 @@
   <bean id="cdPlayer" class="soundsystemcnamespace.CDPlayer" c:cd-ref="compactDisc" >
   </bean> 
   
+  <bean id="cdPlayerPropery" class="soundsystemcnamespace.CDPlayerProperty" p:compactDisc-ref="compactDisc"></bean>
+  
+  
   <bean id="emptyDisc" class = "soundsystemcnamespace.BlankDisc" 
   	c:_0="Shyam"
   	c:_1 ="The Man with Metal heart"/> 
+  	
+  <bean id="blankDiscPropertyInjectionXML" class="soundsystemcnamespace.BlankDiscPropertyInjectionXmL"
+		 p:title="Sgt. Pepper's Lonely Hearts Club Band"
+		 p:artist="The Beatles"
+		 >
+		<property name="tracks">
+			<list>
+		      <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+		      <value>With a Little Help from My Friends</value>
+		      <value>Lucy in the Sky with Diamonds</value>
+		      <value>Getting Better</value>
+		      <value>Fixing a Hole</value>
+		    </list>
+		</property>
+	</bean>
   
   
 </beans>

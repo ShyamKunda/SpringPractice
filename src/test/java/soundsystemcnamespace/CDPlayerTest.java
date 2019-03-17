@@ -23,6 +23,12 @@ public class CDPlayerTest {
 	@Autowired
 	private BlankDisc bdisc;
 	
+	@Autowired
+	private CDPlayerProperty cdPlayerProp;
+	
+	@Autowired
+	private BlankDiscPropertyInjectionXmL blankDiscPropertyInjectionXmL;
+	
 	@Test
 	public void cdTest() {
 		assertNotNull(cd);
@@ -35,6 +41,16 @@ public class CDPlayerTest {
 		System.out.println(bdisc.play());
 		assertEquals(player.play(), "Playing Lonely hearts club of sgtPeppers");
 		
+		
+	}
+	
+	@Test
+	public void propTest() {
+		System.out.println("This is Property injection Test");
+		cdPlayerProp.play();
+		assertEquals(cdPlayerProp.play(),"Playing Lonely hearts club of sgtPeppers");
+		blankDiscPropertyInjectionXmL.play();
+		assertEquals(blankDiscPropertyInjectionXmL.getTracks().size(), 5);
 		
 	}
 

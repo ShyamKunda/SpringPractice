@@ -11,8 +11,12 @@
 
 	<bean id="compactDisc" primary="true"
 		class="soundsystemXMLConfiguration.SgtPeppers"></bean>
-	<bean id="cdPlayer" class="soundsystemXMLConfiguration.CDPlayer">
+	<bean id="cdPlayer" primary="true" class="soundsystemXMLConfiguration.CDPlayer">
 		<constructor-arg ref="compactDisc" />
+	</bean>
+	
+	<bean id="cdPlayerProperty" class="soundsystemXMLConfiguration.CDPlayerProperty">
+	<property name="compactDisc" ref="compactDisc"></property>
 	</bean>
 
 	<bean id="emptyDisc" class="soundsystemXMLConfiguration.BlankDisc">
@@ -27,8 +31,21 @@
 			<value>track5</value>
 			<value>track6</value>
 		</list>
-		
 		</constructor-arg>
+	</bean>
+	
+	<bean id="blankDiscPropertyInjectionXML" class="soundsystemXMLConfiguration.BlankDiscPropertyInjectionXmL">
+		<property name="title" value="Sgt. Pepper's Lonely Hearts Club Band"></property>
+		<property name="artist" value="Beetles"></property>
+		<property name="tracks">
+			<list>
+		      <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+		      <value>With a Little Help from My Friends</value>
+		      <value>Lucy in the Sky with Diamonds</value>
+		      <value>Getting Better</value>
+		      <value>Fixing a Hole</value>
+		    </list>
+		</property>
 	</bean>
 
 
