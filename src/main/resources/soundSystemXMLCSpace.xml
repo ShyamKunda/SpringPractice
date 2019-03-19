@@ -22,8 +22,7 @@
   	
   <bean id="blankDiscPropertyInjectionXML" class="soundsystemcnamespace.BlankDiscPropertyInjectionXmL"
 		 p:title="Sgt. Pepper's Lonely Hearts Club Band"
-		 p:artist="The Beatles"
-		 >
+		 p:artist="The Beatles">
 		<property name="tracks">
 			<list>
 		      <value>Sgt. Pepper's Lonely Hearts Club Band</value>
